@@ -1,19 +1,38 @@
-{
-  "name": "backend",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+
+module.exports = {
+  env: {
+    browser: false,
+    es6: true,
+    jest: true,
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Mahao05/Buzz-Wave.git"
+  extends: [
+    'airbnb-base',
+    'plugin:jest/all',
+  ],
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
   },
-  "author": "\"Neo Molefe\"",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Mahao05/Buzz-Wave/issues"
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module',
   },
-  "homepage": "https://github.com/Mahao05/Buzz-Wave#readme"
-}
+  plugins: ['jest'],
+  rules: {
+    'max-classes-per-file': 'off',
+    'no-underscore-dangle': 'off',
+    'no-console': 'off',
+    'no-shadow': 'off',
+    'no-restricted-syntax': [
+      'error',
+      'LabeledStatement',
+      'WithStatement',
+    ],
+  },
+  overrides:[
+    {
+      files: ['*.js'],
+      excludedFiles: 'babel.config.js',
+    }
+  ]
+};
