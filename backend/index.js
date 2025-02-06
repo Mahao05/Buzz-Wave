@@ -14,7 +14,7 @@ app.listen(3001);
 
 const StreamChat = require('stream-chat-javascript');
 
-const client = StreamChat.getInstance('YOUR_API_KEY', 'YOUR_APP_ID');
+const client = StreamChat.getInstance('jfdryu5a723e', '1364357');
 
 
 async function createUser(userId, userName) {
